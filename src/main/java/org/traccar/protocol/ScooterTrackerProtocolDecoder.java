@@ -57,13 +57,13 @@ public class ScooterTrackerProtocolDecoder extends BaseProtocolDecoder {
         switch (fields[index++])
         {
             case "N":
-                position.set(Position.KEY_ARMED, false);
+                position.set(Position.KEY_LOCK, false);
                 break;
             case "A":
-                position.set(Position.KEY_ARMED, true);
+                position.set(Position.KEY_LOCK, true);
                 break;
             case "S":
-                position.set(Position.KEY_ARMED, true);
+                position.set(Position.KEY_LOCK, true);
                 position.set(Position.KEY_ALARM, Position.ALARM_SOS);
                 break;
             default:
