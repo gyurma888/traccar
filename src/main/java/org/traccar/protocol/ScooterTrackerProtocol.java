@@ -17,7 +17,7 @@ public class ScooterTrackerProtocol extends BaseProtocol {
         addServer(new TrackerServer(config, getName(), false) {
             @Override
             protected void addProtocolHandlers(PipelineBuilder pipeline, Config config) {
-                pipeline.addLast(new CharacterDelimiterFrameDecoder(1024, '$'));
+                pipeline.addLast(new CharacterDelimiterFrameDecoder(4096, '$'));
                 pipeline.addLast(new StringEncoder());
                 pipeline.addLast(new StringDecoder());
                 pipeline.addLast(new ScooterTrackerProtocolDecoder(ScooterTrackerProtocol.this));
