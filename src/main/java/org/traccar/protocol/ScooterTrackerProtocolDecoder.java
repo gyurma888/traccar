@@ -159,6 +159,8 @@ public class ScooterTrackerProtocolDecoder extends BaseProtocolDecoder {
                 return null;
         }
 
+        position.set(Position.KEY_DEVICE_TEMP, Integer.parseInt(fields[index++]));      //parse device temperature
+
         if(wifiCount > 0 || cellCount > 0)
         {
             position.setNetwork(network);
