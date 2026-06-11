@@ -53,6 +53,8 @@ public class ScooterTrackerProtocolDecoder extends BaseProtocolDecoder {
 
         Network network = new Network();
 
+        position.set(Position.KEY_VERSION_FW, fields[index++]); //parse firmware version
+
         //parse STATUS
         switch (fields[index++])
         {
